@@ -3,6 +3,8 @@ require "rails_helper"
 feature "User can view a list of articles on the main page" do
   context "with articles in the database" do
     before do
+      create(:article, title: "Trump gets corona virus")
+      create(:article, title: "Cure found for the corona virus")
       visit root_path
     end
 
