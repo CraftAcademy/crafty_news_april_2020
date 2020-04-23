@@ -16,7 +16,6 @@ class ArticlesController < ApplicationController
     @article = Article.create(params.require(:article).permit(:title, :content))
     if @article.persisted?
       redirect_to @article, notice: "Article was created"
-      binding.pry
     else
       render 'new', notice: "Something went wrong"
     end
